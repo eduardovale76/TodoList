@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Update Task</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <p> Are You sure You wann delete this item? {{item}}</p>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <input type='submit' name="Update Task">
+        </form>
+     <a href="{% url 'index' %}"> Cancel </a>>
+    </body>
+</html>
