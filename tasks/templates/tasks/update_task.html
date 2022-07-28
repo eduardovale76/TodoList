@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title></title>
+        <title>Update Task</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/style.css" rel="stylesheet">
@@ -9,15 +9,9 @@
     <body>
         <form method="POST" action="">
             {% csrf_token %}
-            {{form.title}}
-            <input type='submit' name="Create Task">
+            {{form}}
+            <input type='submit' name="Update Task">
         </form>
-        {% for task in tasks %}
-        <div>
-             <p>{{task}}</p>
-             <a href="{% url 'updateTask' task.id %}">Update</a>
-        </div>
-        {% endfor %}
     
     </body>
 </html>
