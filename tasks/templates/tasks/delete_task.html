@@ -1,17 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Update Task</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
+        <link href="{% static 'css/mycss.css' %}" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
     </head>
     <body>
-        <p> Are You sure You wann delete this item? {{item}}</p>
-        <form method="POST" action="">
-            {% csrf_token %}
-            <input type='submit' name="Update Task">
-        </form>
-     <a href="{% url 'index' %}"> Cancel </a>>
+        <div class="center-column ">
+            <p> Are You sure You wanna delete this item "<b>{{item}}</b>"?</p>
+            <form method="POST" action="">
+                {% csrf_token %}
+                <input class='btn btn-danger' type='submit' name="Update Task" value="Delete item">
+            </form>
+            <br>
+            <a href="{% url 'index' %}"> <b>Cancel</b></a>
+        </div>
     </body>
 </html>
